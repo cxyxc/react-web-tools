@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link href="https://cdn.bootcss.com/viewerjs/1.3.7/viewer.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/viewerjs/1.3.7/viewer.min.js"></script>
+    <script src="https://cdn.bootcss.com/qs/6.9.0/qs.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+    <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <title>Image</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-variant: tabular-nums;
+        line-height: 1.5;
+        background-color: #eee;
+        -webkit-font-feature-settings: "tnum";
+        font-feature-settings: "tnum";
+    }
+
+    .grid {
+        background: #eee;
+    }
+
+    .grid:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    .grid-sizer {
+        width: calc(25% - 4px);
+    }
+    .grid-item {
+        width: calc(25% - 4px);
+        min-height: 120px;
+        margin-top: 4px;
+    }
+
+    .grid-item>img {
+        cursor: zoom-in;
+        width: 100%;
+        display: block;
+    }
+
+    .grid-item>.title {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 36px;
+        line-height: 30px;
+        font-size: 18px;
+        text-align: center;
+        color: rgba(0, 0, 0, .85);
+        background-color: rgba(255, 255, 255, .45);
+        overflow: hidden;
+    }
+
+    .viewer-title {
+        font-size: 16px;
+    }
+
+    .ant-empty {
+        margin: 0 8px;
+        font-size: 14px;
+        line-height: 22px;
+        text-align: center;
+    }
+
+    .ant-empty-image img {
+        height: 100%;
+    }
+
+    .ant-empty-description {
+        margin: 0;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <div id="images" class="grid">
+            <div class="grid-sizer"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function renderEmpty() {
+        $('#container').html(
+            '<div style="padding-top: 200px;"><div class="ant-empty"><div class="ant-empty-image"><img alt="暂无图片" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTg0IiBoZWlnaHQ9IjE1MiIgdmlld0JveD0iMCAwIDE4NCAxNTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI0IDMxLjY3KSI+CiAgICAgIDxlbGxpcHNlIGZpbGwtb3BhY2l0eT0iLjgiIGZpbGw9IiNGNUY1RjciIGN4PSI2Ny43OTciIGN5PSIxMDYuODkiIHJ4PSI2Ny43OTciIHJ5PSIxMi42NjgiLz4KICAgICAgPHBhdGggZD0iTTEyMi4wMzQgNjkuNjc0TDk4LjEwOSA0MC4yMjljLTEuMTQ4LTEuMzg2LTIuODI2LTIuMjI1LTQuNTkzLTIuMjI1aC01MS40NGMtMS43NjYgMC0zLjQ0NC44MzktNC41OTIgMi4yMjVMMTMuNTYgNjkuNjc0djE1LjM4M2gxMDguNDc1VjY5LjY3NHoiIGZpbGw9IiNBRUI4QzIiLz4KICAgICAgPHBhdGggZD0iTTEwMS41MzcgODYuMjE0TDgwLjYzIDYxLjEwMmMtMS4wMDEtMS4yMDctMi41MDctMS44NjctNC4wNDgtMS44NjdIMzEuNzI0Yy0xLjU0IDAtMy4wNDcuNjYtNC4wNDggMS44NjdMNi43NjkgODYuMjE0djEzLjc5Mmg5NC43NjhWODYuMjE0eiIgZmlsbD0idXJsKCNsaW5lYXJHcmFkaWVudC0xKSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTMuNTYpIi8+CiAgICAgIDxwYXRoIGQ9Ik0zMy44MyAwaDY3LjkzM2E0IDQgMCAwIDEgNCA0djkzLjM0NGE0IDQgMCAwIDEtNCA0SDMzLjgzYTQgNCAwIDAgMS00LTRWNGE0IDQgMCAwIDEgNC00eiIgZmlsbD0iI0Y1RjVGNyIvPgogICAgICA8cGF0aCBkPSJNNDIuNjc4IDkuOTUzaDUwLjIzN2EyIDIgMCAwIDEgMiAyVjM2LjkxYTIgMiAwIDAgMS0yIDJINDIuNjc4YTIgMiAwIDAgMS0yLTJWMTEuOTUzYTIgMiAwIDAgMSAyLTJ6TTQyLjk0IDQ5Ljc2N2g0OS43MTNhMi4yNjIgMi4yNjIgMCAxIDEgMCA0LjUyNEg0Mi45NGEyLjI2MiAyLjI2MiAwIDAgMSAwLTQuNTI0ek00Mi45NCA2MS41M2g0OS43MTNhMi4yNjIgMi4yNjIgMCAxIDEgMCA0LjUyNUg0Mi45NGEyLjI2MiAyLjI2MiAwIDAgMSAwLTQuNTI1ek0xMjEuODEzIDEwNS4wMzJjLS43NzUgMy4wNzEtMy40OTcgNS4zNi02LjczNSA1LjM2SDIwLjUxNWMtMy4yMzggMC01Ljk2LTIuMjktNi43MzQtNS4zNmE3LjMwOSA3LjMwOSAwIDAgMS0uMjIyLTEuNzlWNjkuNjc1aDI2LjMxOGMyLjkwNyAwIDUuMjUgMi40NDggNS4yNSA1LjQydi4wNGMwIDIuOTcxIDIuMzcgNS4zNyA1LjI3NyA1LjM3aDM0Ljc4NWMyLjkwNyAwIDUuMjc3LTIuNDIxIDUuMjc3LTUuMzkzVjc1LjFjMC0yLjk3MiAyLjM0My01LjQyNiA1LjI1LTUuNDI2aDI2LjMxOHYzMy41NjljMCAuNjE3LS4wNzcgMS4yMTYtLjIyMSAxLjc4OXoiIGZpbGw9IiNEQ0UwRTYiLz4KICAgIDwvZz4KICAgIDxwYXRoIGQ9Ik0xNDkuMTIxIDMzLjI5MmwtNi44MyAyLjY1YTEgMSAwIDAgMS0xLjMxNy0xLjIzbDEuOTM3LTYuMjA3Yy0yLjU4OS0yLjk0NC00LjEwOS02LjUzNC00LjEwOS0xMC40MDhDMTM4LjgwMiA4LjEwMiAxNDguOTIgMCAxNjEuNDAyIDAgMTczLjg4MSAwIDE4NCA4LjEwMiAxODQgMTguMDk3YzAgOS45OTUtMTAuMTE4IDE4LjA5Ny0yMi41OTkgMTguMDk3LTQuNTI4IDAtOC43NDQtMS4wNjYtMTIuMjgtMi45MDJ6IiBmaWxsPSIjRENFMEU2Ii8+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNDkuNjUgMTUuMzgzKSIgZmlsbD0iI0ZGRiI+CiAgICAgIDxlbGxpcHNlIGN4PSIyMC42NTQiIGN5PSIzLjE2NyIgcng9IjIuODQ5IiByeT0iMi44MTUiLz4KICAgICAgPHBhdGggZD0iTTUuNjk4IDUuNjNIMEwyLjg5OC43MDR6TTkuMjU5LjcwNGg0Ljk4NVY1LjYzSDkuMjU5eiIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg=="></div><p class="ant-empty-description">暂无图片</p></div></div>'
+        )
+    }
+
+    function masonryReRender() {
+        // 图片加载完成后重新布局
+        if($('.grid').masonry instanceof Function)
+            $('.grid').masonry('layout');
+    }
+
+    function render(images) {
+        if (!images || images.length === 0) {
+            renderEmpty()
+            return;
+        }
+        $('#images').append(
+            images.map(function (item) {
+                var url = '/api/v1/files/' + item.split(':')[0];
+                var alt = item.split(':')[1];
+                return '<div class="grid-item">' +
+                    '<img class="lazy" onload="masonryReRender(this)" data-original="' + url + '" alt="' + alt + '">' +
+                    '<div class="title">' + alt + '</div>' +
+                    '</div>'
+            })
+        )
+        // 首屏布局
+        $('.grid').masonry({
+            columnWidth: '.grid-sizer',
+            itemSelector: '.grid-item',
+            gutter: 4
+        });
+        // 懒加载设置
+        $("img.lazy").lazyload({
+            effect: "fadeIn"
+        })
+        var gallery = new Viewer(document.querySelector('#images'), {
+            toolbar: {
+                zoomIn: 'large',
+                zoomOut: 'large',
+                oneToOne: 'large',
+                reset: 'large',
+                prev: 'large',
+                play: false,
+                next: 'large',
+                rotateLeft: 'large',
+                rotateRight: 'large',
+                flipHorizontal: 'large',
+                flipVertical: 'large',
+            },
+        });
+    }
+
+    var parameters = Qs.parse(
+        window.location.href.split('?')[1] || '', {
+            arrayLimit: 50
+        }
+    )
+    var images = parameters.i || [];
+    render(images)
+</script>
+
+</html>

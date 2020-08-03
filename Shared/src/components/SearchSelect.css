@@ -1,0 +1,18 @@
+:local .select1 {
+    width: calc(100% - 46px) !important;
+}
+:local .select2 {
+    width: calc(100% - 92px) !important;
+}
+:local .btn {
+    width: 46px;
+    margin: 0 !important;
+}
+
+.has-error :local(.select1) .ant-select-selection {
+    border-right-width: 1px !important;
+}
+
+.has-error :local(.select2) .ant-select-selection {
+    border-right-width: 1px !important;
+}

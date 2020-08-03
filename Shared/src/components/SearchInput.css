@@ -1,0 +1,16 @@
+:local .input {
+    width: calc(100% - 46px) !important;
+}
+
+:local .input2 {
+    width: calc(100% - 92px) !important;
+}
+
+:local .btn {
+    width: 46px;
+    margin: 0 !important;
+}
+
+.has-error :local(.btn) {
+    border-color: #f5222d !important;
+}

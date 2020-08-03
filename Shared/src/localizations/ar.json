@@ -1,0 +1,22 @@
+{
+    "COMMON_BACK": "العوده",
+    "COMMON_TABLE_EMPTY_TEXT": "لا توجد بيانات مؤقتا",
+    "COMMON_TABLE_QUERY_FAIL_TEXT": "فشل في التحميل ، الرجاء المحاولة مره أخرى",
+    "COMMON_DATE_RANGE_TODAY": "اليوم",
+    "COMMON_DATE_RANGE_LAST_3_DAY": "آخر 3 أيام",
+    "COMMON_DATE_RANGE_LAST_7_DAY": "آخر 7 أيام",
+    "COMMON_DATE_RANGE_LAST_30_DAY": "آخر 30 يوم",
+    "COMMON_DATE_RANGE_THIS_MONTH": "الشهر",
+    "COMMON_DATE_RANGE_THIS_YEAR": "هذا",
+    "COMMON_COPY_WRAPPER_COPY": "نسخ",
+    "COMMON_COPY_WRAPPER_COPIED": "تم نسخ",
+    "COMMON_DROPDOWN_MORE": "اكثر",
+    "COMMON_TAGSELECT_ALL": "كامل",
+    "COMMON_TAGSELECT_EXPAND": "وسعت",
+    "COMMON_TAGSELECT_COLLAPSE": "انهدام",
+    "COMMON_SEARCHSELECT_PLACEHOLDER": "يرجى إدخال استعلام",
+    "COMMON_SERVERNOTIFICATION_SUCCESS": "نجاح",
+    "COMMON_SERVERNOTIFICATION_FAIL": "الخادم غير طبيعي ، يرجى الاتصال بالمسؤول",
+    "COMMON_CURRENTUSERCONTEXT_MESSAGE": "فشل الاستحواذ",
+    "COMMON_REQUEST_401_TIP_MESSAGE": "لقد قمت بتسجيل الخروج لك لأسباب أمنية لأنك لم تعمل لفترة طويلة."
+}

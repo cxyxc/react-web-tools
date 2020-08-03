@@ -1,0 +1,57 @@
+/* 重写 ant-form-item 表单域间距 原为 margin-bottom: 24px; */
+.form-standard .ant-form-item {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* 源自 antd 内对 form 标签内的 ant-input-group textarea 的样式重写 */
+/* 使用 form-standard 代替 form 标签 */
+.form-standard :not(.ant-input-group-wrapper) > .ant-input-group,
+.form-standard .ant-input-group-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+.form-standard textarea.ant-input {
+    height: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+/* form-standard 中使用按钮、按钮组时的样式重写 */
+.form-standard .ant-row .ant-btn {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+.form-standard .ant-row .ant-input-group .ant-btn {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.form-standard > .ant-btn:not(.ant-input-search-button),
+.form-standard :not(.ant-btn-group) > .ant-btn:not(.ant-input-search-button),
+.form-standard .ant-btn-group {
+    margin-left: 0px;
+    margin-right: 8px;
+}
+.form-standard .col-align-right > .ant-btn:not(.ant-input-search-button),
+.form-standard .col-align-right :not(.ant-btn-group) > .ant-btn:not(.ant-input-search-button),
+.form-standard .col-align-right .ant-btn-group {
+    margin-left: 8px;
+    margin-right: 0;
+}
+
+/* 其他 antd 表单元素在 form-standard 下的样式重写 */
+.form-standard .ant-tag {
+    font-size: 14px;
+    margin: 4px 4px 4px 0;
+}
+.form-standard .ant-select {
+    width: 100%;
+}
+.form-standard .ant-input-number {
+    width: 100%;
+}
+.form-standard .ant-calendar-picker {
+    width: 100%
+}

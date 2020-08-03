@@ -1,0 +1,22 @@
+{
+    "COMMON_BACK": "Back",
+    "COMMON_TABLE_EMPTY_TEXT": "No Data",
+    "COMMON_TABLE_QUERY_FAIL_TEXT": "Loading failed, please try again",
+    "COMMON_DATE_RANGE_TODAY": "today",
+    "COMMON_DATE_RANGE_LAST_3_DAY": "last 3 days",
+    "COMMON_DATE_RANGE_LAST_7_DAY": "last 7 days",
+    "COMMON_DATE_RANGE_LAST_30_DAY": "last 30 days",
+    "COMMON_DATE_RANGE_THIS_MONTH": "this month",
+    "COMMON_DATE_RANGE_THIS_YEAR": "this year",
+    "COMMON_COPY_WRAPPER_COPY": "Copy",
+    "COMMON_COPY_WRAPPER_COPIED": "Copied",
+    "COMMON_DROPDOWN_MORE": "More",
+    "COMMON_TAGSELECT_ALL": "All",
+    "COMMON_TAGSELECT_EXPAND": "Expand",
+    "COMMON_TAGSELECT_COLLAPSE": "Collapse",
+    "COMMON_SEARCHSELECT_PLACEHOLDER": "Input to search",
+    "COMMON_SERVERNOTIFICATION_SUCCESS": "success",
+    "COMMON_SERVERNOTIFICATION_FAIL": "Internal server error, please contact system administrator",
+    "COMMON_CURRENTUSERCONTEXT_MESSAGE": "Get userinfo faild",
+    "COMMON_REQUEST_401_TIP_MESSAGE": "For security reasons, system automatically log you out after long time inactivity."
+}

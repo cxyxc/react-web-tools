@@ -1,0 +1,36 @@
+/* antd css cover, bug fix*/
+/* 表头合并，最后一个单元格右侧边框丢失 https://gitlab.sdtdev.net/dms/crm/web-client/issues/14 */
+.ant-table-small.ant-table-bordered .ant-table-thead > tr:last-child > th:last-child {
+    border-right: 1px solid #e8e8e8
+}
+
+/* 没有使用表头固定，宽度足够的情况下，避免出现横向滚动条 */
+.ant-table-body {
+    overflow-x: auto !important
+}
+
+/*
+    antd DescriptionList title 使用 Row 时被其样式
+    .antd-pro-description-list-descriptionList .ant-row {margin-bottom: -16px}
+    影响造成间距出现问题，在此处覆盖消除影响
+*/
+.antd-pro-description-list-descriptionList .antd-pro-description-list-title .ant-row {
+    margin-bottom: 0;
+}
+
+/* Antd 3.13.6 版本升级，Form.Item 没有子元素时，Grid 布局显示异常 https://gitlab.sdtdev.net/rd/web/guideline/issues/47 */
+.ant-form-item-control {
+    line-height: 39.9999px !important;
+}
+
+/* Card 间隔 16px，此处示例为上下间隔，根据业务界面可补充左右间隔 */
+.ant-card {
+    margin: 16px 0
+}
+/* Card 内边距，左右24px，上下16px */
+.ant-card-wider-padding .ant-card-head {
+    padding: 0 24px
+}
+.ant-card-wider-padding .ant-card-body {
+    padding: 16px 24px
+}

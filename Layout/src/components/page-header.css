@@ -1,0 +1,100 @@
+/* Nav menu styles */
+.page-header.navbar .hor-menu .navbar-nav > li.mega-menu-dropdown > .dropdown-menu .mega-menu-content .mega-menu-submenu li {
+    height: 24px;
+}
+
+/* Top menu styles */
+#logout-icon {
+    transform: scaleX(-1);
+    filter: "FlipH";
+    color: #999;
+    margin: 18px 15px 0 30px;
+}
+
+.header-right {
+  position: absolute;
+  top: 0; 
+  right: 0;
+}
+
+@media(max-width: 992px) {
+    .header-right {
+        width: 100%;
+        background: #fff;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.logo {
+  height: 50px;
+  position: relative;
+  padding-left: 14px;
+  line-height: 46px;
+  background: #002140;
+}
+
+/* 防止 IE 10 img 宽高自动赋值 */
+img {
+  height: auto;
+  width: auto;
+}
+
+.logo .logo-icon,
+.logo .logo-title {
+  border: 0;
+  vertical-align: middle;
+}
+
+.logo .logo-icon {
+  height: 32px;
+}
+.logo .logo-title {
+  margin-left: 16px;
+  height: 20px;
+}
+
+#root .trigger {
+  font-size: 20px;
+  line-height: 50px;
+  cursor: pointer;
+  transition: color .3s;
+  background-color: #ffffff;
+  padding: 0 24px;
+}
+
+#root .trigger:hover {
+  background-color: #e6f7ff;
+}
+
+#root .ant-layout-sider {
+  flex: 0 0 256px !important;
+  width: 256px !important;
+  max-width: 256px !important;
+  min-width: 256px !important;
+}
+
+#root .ant-layout-sider-collapsed {
+  width: 64px !important;
+  flex: 0 0 64px !important;
+  max-width: 64px !important;
+  min-width: 64px !important;
+}
+
+#root .ant-layout-sider-collapsed .anticon {
+  font-size: 16px;
+}
+#root .ant-layout-sider-collapsed .imgIcon {
+  width: 16px;
+  height: 16px;
+}
+#root .ant-layout-sider-collapsed .nav-text {
+  display: none;
+}
+
+/* topMenu样式 */
+.topMenu {
+  float: right;
+  height: 100%;
+  margin-right: 16px;
+}

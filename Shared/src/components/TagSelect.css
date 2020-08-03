@@ -1,0 +1,24 @@
+:local .tagSelect {
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  max-height: 39px;
+  line-height: 39px;
+  transition: all .3s;
+}
+
+:local .expanded {
+  position: relative;
+  transition: all .3s;
+  max-height: 500px;
+}
+
+:local .trigger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+:local .hasExpandTag {
+  padding-right: 50px;
+}

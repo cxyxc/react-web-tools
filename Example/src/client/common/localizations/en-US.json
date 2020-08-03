@@ -1,0 +1,15 @@
+{
+    "button.export": "Export",
+    "table.queryFail": "Search failed, try again",
+    "table.noData": "N/A",
+    "table.showTableTotal": "Total {total} record(s)",
+    "response.success": "{desc} Success",
+    "response.400": "{desc} Failure",
+    "response.401": "{desc} Failure: session timeout, please login again (401)",
+    "response.403": "{desc} Failure: unauthorized operation, please contact administrator (403)",
+    "response.404": "{desc} Failure: operation not defined, please contact administrator (404)",
+    "response.500": "{desc} Failure: internal server error, please contact administrator (500)",
+    "response.502": "{desc} Failure, try again later (502)",
+    "response.structError": "{desc} Failure: data structure error",
+    "response.defaultError": "{desc} Failure, please contact administrator ({status})"
+}

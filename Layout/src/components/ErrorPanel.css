@@ -1,0 +1,35 @@
+:local(.container) {
+    padding: 0 24px;
+}
+
+:local(.container) .antd-pro-exception-exception {
+    margin: 0 auto;
+}
+
+:local(.container) .ant-popover-inner-content {
+    width: 300px;
+    height: 200px;
+    overflow-y: scroll;
+    word-wrap: break-word;
+}
+
+:local(.container) .antd-pro-exception-exception .antd-pro-exception-imgEle {
+    height: 280px;
+}
+
+:local(.detail) {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 870px;
+}
+
+:local(.title) {
+    font-size: 40px;
+}
+
+:local(.textarea) {
+    width: 0;
+    height: 0;
+    border: 0;
+    outline: none;
+}

@@ -1,0 +1,22 @@
+{
+    "COMMON_BACK": "Voltar para",
+    "COMMON_TABLE_EMPTY_TEXT": "Sem dados",
+    "COMMON_TABLE_QUERY_FAIL_TEXT": "Falha no carregamento, tente novamente",
+    "COMMON_DATE_RANGE_TODAY": "Hoje",
+    "COMMON_DATE_RANGE_LAST_3_DAY": "Últimos 3 dias",
+    "COMMON_DATE_RANGE_LAST_7_DAY": "Últimos 7 dias",
+    "COMMON_DATE_RANGE_LAST_30_DAY": "Últimos 30 dias",
+    "COMMON_DATE_RANGE_THIS_MONTH": "Este mês",
+    "COMMON_DATE_RANGE_THIS_YEAR": "Este ano",
+    "COMMON_COPY_WRAPPER_COPY": "Copiar",
+    "COMMON_COPY_WRAPPER_COPIED": "Copiado",
+    "COMMON_DROPDOWN_MORE": "Mais",
+    "COMMON_TAGSELECT_ALL": "Todos",
+    "COMMON_TAGSELECT_EXPAND": "Abre.",
+    "COMMON_TAGSELECT_COLLAPSE": "Arrumar",
+    "COMMON_SEARCHSELECT_PLACEHOLDER": "Por favor insira a consulta",
+    "COMMON_SERVERNOTIFICATION_SUCCESS": "Êxito",
+    "COMMON_SERVERNOTIFICATION_FAIL": "O servidor está anormal, entre em contato com o administrador",
+    "COMMON_CURRENTUSERCONTEXT_MESSAGE": "Falha na obtenção",
+    "COMMON_REQUEST_401_TIP_MESSAGE": "Como você não opera há muito tempo, o sistema foi desconectado devido a considerações de segurança"
+  }

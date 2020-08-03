@@ -1,0 +1,178 @@
+.sidebar {
+  list-style: none;
+  padding: 0;
+}
+
+/* 菜单滚动条相关样式 */
+.sidebar .scrollbar {
+  height: calc(100vh - 110px);
+}
+
+.sidebar-loading {
+  margin-top: calc(50vh - 50px);
+  margin-left: 102px;
+}
+
+
+.sidebar-menu-item-img {
+  width: 14px;
+  margin-right: 10px;
+  margin-top: -2px;
+}
+
+.ant-menu-inline-collapsed .sidebar-menu-item-img {
+  margin-right: 0px;
+}
+.ant-menu-inline-collapsed > .ant-menu-item .sidebar-menu-item-img + span,
+.ant-menu-inline-collapsed
+    > .ant-menu-item-group
+    > .ant-menu-item-group-list
+    > .ant-menu-item
+    .sidebar-menu-item-img
+    + span,
+.ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title .sidebar-menu-item-img + span {
+    max-width: 0;
+    display: inline-block;
+    opacity: 0;
+}
+.ant-menu-item .sidebar-menu-item-img + span,
+.ant-menu-submenu-title .sidebar-menu-item-img + span {
+  transition: opacity 0.3s ease-in-out, width 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.sidebar-serach-container {
+  margin: 10px 18px;
+  padding: 0;
+}
+
+.sidebar-serach-border {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+
+.sidebar-serach-input {
+  font-size: 13px;
+  padding: 6px 8px;
+  border: 0;
+  height: auto;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: none; 
+  background: #001529;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.sidebar-serach-border > span {
+  position: relative;
+  font-size: 0;
+  white-space: nowrap;
+  width: 1%;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.sidebar-serach-border > span > a {
+  margin-right: 6px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 100% 3px;
+  line-height: 1.44;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  white-space: nowrap;
+  font-size: 14px;
+  border-radius: 4px;
+  user-select: none
+}
+
+.sidebar-serach-button {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 15px;
+  top: 1px;
+  position: relative;
+  display: inline-block;
+  width: 1.25em;
+  text-align: center;
+  line-height: 14px;
+}
+
+/* 已废弃 MenuItemGroup 方案，改用 div 自行实现顶级菜单，样式仍保留 */
+.sider .menu-fold .shell-sidebar-menu .ant-menu-item-group-title {
+  display: none;
+}
+.ant-menu-item-group-title .anticon {
+  min-width: 14px;
+  margin-right: 10px;
+  transition: font-size 0.15s cubic-bezier(0.215, 0.61, 0.355, 1), margin 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/****** 覆盖样式结束 *******/
+/****
+覆盖 antd 样式 
+****/
+.sider .ant-menu-inline-collapsed {
+  width: 64px !important;
+}
+.sider .ant-menu-inline-collapsed > .ant-menu-item, .ant-menu-inline-collapsed > .ant-menu-item-group > .ant-menu-item-group-list > .ant-menu-item, .ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title {
+  text-align: center;
+}
+.sider .ant-menu-inline-collapsed > .ant-menu-item,
+.sider .ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title {
+  padding: 0 !important;
+}
+
+/* 菜单搜索框 动画 */
+
+.width-auto {
+  width: 162px;
+  transition: 0.3s;
+}
+
+.width-0 {
+  width: 0;
+  transition: 0.3s;
+}
+
+.no-border {
+  border: 0 !important;
+}
+
+.no-display {
+  display: none !important;
+}
+
+/* 菜单文字超长后滚动动画 */
+.submenu-title-anmi:hover {
+  animation: text-scroll 6s linear infinite normal;
+}
+
+@keyframes text-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-180px, 0, 0);
+    display: none;
+  }
+}
+
+/* 第一层菜单使用 url 时，与其他第一层菜单对齐 */
+.menuTopItem {
+  padding-left: 16px !important;
+}
+
+.menu-system-position-icon {
+  position: absolute;
+  margin-top: 4px;
+  right: 6px;
+}

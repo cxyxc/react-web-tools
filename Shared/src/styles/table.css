@@ -1,0 +1,38 @@
+/* Table class: white-space-nowrap 单元格内数据不换行*/
+.ant-table-wrapper.white-space-nowrap table, .ant-table-wrapper.white-space-nowrap td, .ant-table-wrapper.white-space-nowrap th {
+    white-space: nowrap;
+}
+
+/* Table class: ellipsis 表格单元格内容过长时用省略号表示*/
+.ant-table-wrapper.ellipsis table td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* Table.Column class: ellipsis 单元格内容过长时用省略号表示*/
+.ant-table-wrapper td.ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* Table.Column class: editable 单元格可编辑 */
+.ant-table-wrapper td.editable {
+    cursor: pointer;
+}
+
+/* Table.Column class: align-right 单元格内容右对齐展示 */
+.ant-table-wrapper td.align-right, .ant-table-wrapper th.align-right {
+    text-align: right;
+}
+
+/* Table.Column class: align-center 单元格内容居中展示 */
+.ant-table-wrapper td.align-center, .ant-table-wrapper th.align-center {
+    text-align: center;
+}
+
+/* Table rowClassName: row-selected 选中行标记颜色 */
+.ant-table-wrapper tr.row-selected {
+    background-color: #f3f3be;
+}

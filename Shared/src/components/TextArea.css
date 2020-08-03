@@ -1,0 +1,27 @@
+:local(.textarea) {
+    position: absolute !important;
+    z-index: 999;
+}
+
+:local(.text) {
+    text-overflow: ellipsis;
+}
+
+:local .textareaWrap {
+    position: relative;
+    width: 100%;
+}
+
+:local(.textareaWrap) .ant-input-affix-wrapper .ant-input-suffix {
+    visibility: hidden;
+}
+:local(.textareaWrap) .ant-input-affix-wrapper:hover .ant-input-suffix {
+    visibility: visible;
+    cursor: pointer;
+    color: #ccc;
+    font-size: 12px;
+}
+
+:local(.textareaWrap) .ant-input-affix-wrapper:hover .ant-input-suffix:hover {
+    color: #999;
+}

@@ -1,0 +1,11 @@
+/* 
+    antd Breadcrumb last-child 
+    在某种情况下 font-weight 会变为 500
+    chrome 上表现为不加粗
+    在此处进行覆盖保证加粗
+*/
+
+.ant-breadcrumb > span:last-child {
+    font-weight: bold !important;
+    color: rgba(0, 0, 0, 0.65);
+}
